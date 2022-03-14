@@ -9,7 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.thurainx.cointrack.common.Constant
 import com.thurainx.cointrack.common.Resource
 import com.thurainx.cointrack.domain.model.CoinDetail
-import com.thurainx.cointrack.domain.use_case.GetCoinDetail
+import com.thurainx.cointrack.domain.use_case.GetCoinDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CoinDetailViewModel @Inject constructor(
-    private val getCoinDetail: GetCoinDetail,
+    private val getCoinDetailUseCase: GetCoinDetailUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel(){
 
@@ -28,12 +28,14 @@ class CoinDetailViewModel @Inject constructor(
 
     init {
         savedStateHandle.get<String>(Constant.PARAM_COIN_ID)?.let {
-           getCoin(id = it)
+            getCoinDetail(id = it)
         }
     }
 
-    private fun getCoin(id: String){
-        getCoinDetail(id).onEach {
+    private fun getCoinDetail(id: String){
+        Log.d("vm", "coinDetail vm called")
+
+        getCoinDetailUseCase(id).onEach {
             when(it){
                 is Resource.Loading<CoinDetail> -> _state.value = CoinDetailState(isLoading = true)
 

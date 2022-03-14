@@ -31,11 +31,8 @@ fun CoinListScreen(
             items(count = state.coins.size) {
                 Row(
                     modifier = Modifier.fillMaxWidth().clickable {
-                        try {
-                            navController.navigate("coin_detail_screen/${state.coins[it].id}")
-                        }catch (e: Exception){
-                            Log.d("error",e.localizedMessage.toString())
-                        }
+                        navController.navigate("coin_detail_screen/${state.coins[it].id}")
+
                     },
                     horizontalArrangement = Arrangement.SpaceBetween
                 ){

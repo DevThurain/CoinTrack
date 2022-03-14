@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thurainx.cointrack.common.Resource
-import com.thurainx.cointrack.domain.use_case.GetCoinList
+import com.thurainx.cointrack.domain.use_case.GetCoinListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CoinListViewModel @Inject constructor(
-    private val getCoinList: GetCoinList
+    private val getCoinList: GetCoinListUseCase
 ): ViewModel() {
 
     private var _state  = mutableStateOf(CoinListState())
@@ -26,7 +26,7 @@ class CoinListViewModel @Inject constructor(
     }
 
     private fun getCoins(){
-        Log.d("vm", "i am called")
+        Log.d("vm", "coinList vm called")
 
         getCoinList().onEach {
             when(it){
