@@ -13,6 +13,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.thurainx.cointrack.common.Constant
+import com.thurainx.cointrack.presentation.coin_detail.CoinDetailScreen
 import com.thurainx.cointrack.presentation.coin_list.CoinListScreen
 import com.thurainx.cointrack.ui.theme.CoinTrackTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +37,9 @@ class MainActivity : ComponentActivity() {
                 NavHost(navController = navController, startDestination = "coin_list"){
                     composable(route = "coin_list"){
                         CoinListScreen(navController = navController)
+                    }
+                    composable(route = "coin_detail_screen/{coin_id}"){
+                        CoinDetailScreen()
                     }
                 }
             }
