@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface CoinApi{
 
-    @GET("/coins")
+    @GET("coins")
     suspend fun getCoinList() : List<CoinDto>
 }

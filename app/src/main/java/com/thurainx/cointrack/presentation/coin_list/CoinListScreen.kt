@@ -1,9 +1,7 @@
 package com.thurainx.cointrack.presentation.coin_list
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Scaffold
@@ -18,6 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.thurainx.cointrack.ui.theme.LightBlack
 
 @Composable
 fun CoinListScreen(
@@ -25,13 +24,25 @@ fun CoinListScreen(
     viewModel: CoinListViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().background(color = LightBlack)) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(count = state.coins.size) {
-                Text(
-                    text = state.coins[it].name.toString(),
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ){
+                    Text(
+                        text = state.coins[it].name.toString(),
+                        color = Color.White,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                    )
+                    Text(
+                        text = if(state.coins[it].is_active == true) "Active" else "Inactive",
+                        color = if(state.coins[it].is_active == true) Color.Green else Color.Red,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                    )
+                }
+
             }
         }
 

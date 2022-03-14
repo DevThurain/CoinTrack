@@ -20,7 +20,7 @@ class GetCoinList @Inject constructor(
             val coins = repository.getCoinList()
             emit(Resource.Success<List<Coin>>(data = coins))
         }catch (e: HttpException){
-            emit(Resource.Error<List<Coin>>(message = "Http Exception"))
+            emit(Resource.Error<List<Coin>>(message = e.localizedMessage.toString()))
 
         }catch (e: IOException){
             emit(Resource.Error<List<Coin>>(message = "Network Connection Error"))

@@ -30,9 +30,7 @@ class CoinListViewModel @Inject constructor(
 
         getCoinList().onEach {
             when(it){
-                is Resource.Success -> {
-                    _state.value = CoinListState(coins = it.data ?: emptyList())
-                }
+                is Resource.Success -> _state.value = CoinListState(coins = it.data ?: emptyList())
 
                 is Resource.Error -> _state.value = CoinListState(error = it.message ?: "Unknown Error")
 
