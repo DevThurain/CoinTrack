@@ -15,6 +15,7 @@ import androidx.work.*
 import cafe.adriel.voyager.navigator.Navigator
 import com.thurainx.cointrack.presentation.coin_list.CoinListScreen
 import com.thurainx.cointrack.presentation.simple_bottom_navigation.SimpleNavigationScreen
+import com.thurainx.cointrack.presentation.voyager_navigation.VoyagerStartScreen
 import com.thurainx.cointrack.ui.theme.CoinTrackTheme
 import com.thurainx.cointrack.worker.NotiWorker
 import dagger.hilt.android.AndroidEntryPoint
@@ -78,7 +79,8 @@ class MainActivity : ComponentActivity() {
 
                // SimpleNavigationScreen()
 
-                Navigator(screen = CoinListScreen())
+               // Navigator(screen = CoinListScreen())
+                Navigator(screen = VoyagerStartScreen())
             }
         }
     }

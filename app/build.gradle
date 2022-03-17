@@ -91,6 +91,9 @@ dependencies {
     implementation "cafe.adriel.voyager:voyager-navigator:$voyarger_version"
     implementation "cafe.adriel.voyager:voyager-hilt:$voyarger_version"
 
+    // Font Awesome
+    implementation 'com.github.Gurupreet:FontAwesomeCompose:1.0.0'
+
 
 
 
