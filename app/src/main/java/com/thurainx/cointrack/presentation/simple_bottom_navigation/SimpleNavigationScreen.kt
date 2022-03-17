@@ -31,7 +31,7 @@ fun SimpleNavigationScreen(){
             CustomButtonNavigationBar(screens = screens, navController = navController)
         }
     ) {
-        BuildNavigationGraph(navController = navController)
+      //  BuildNavigationGraph(navController = navController)
     }
 }
 
@@ -65,17 +65,17 @@ fun CustomButtonNavigationBar(screens : List<NavigationItem>,navController: NavC
     }
 }
 
-@Composable
-fun BuildNavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Routes.CoinListScreen){
-        composable(route = Routes.CoinListScreen) {
-            CoinListScreen(navController = navController)
-        }
-        composable(route = Routes.NotiScreen) {
-            CoinListScreen(navController = navController)
-        }
-        composable(route = Routes.SettingScreen) {
-            CoinListScreen(navController = navController)
-        }
-    }
-}
+//@Composable
+//fun BuildNavigationGraph(navController: NavHostController) {
+//    NavHost(navController = navController, startDestination = Routes.CoinListScreen){
+//        composable(route = Routes.CoinListScreen) {
+//            CoinListScreen(navController = navController)
+//        }
+//        composable(route = Routes.NotiScreen) {
+//            CoinListScreen(navController = navController)
+//        }
+//        composable(route = Routes.SettingScreen) {
+//            CoinListScreen(navController = navController)
+//        }
+//    }
+//}

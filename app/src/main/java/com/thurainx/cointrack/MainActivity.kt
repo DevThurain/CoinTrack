@@ -12,6 +12,8 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.work.*
+import cafe.adriel.voyager.navigator.Navigator
+import com.thurainx.cointrack.presentation.coin_list.CoinListScreen
 import com.thurainx.cointrack.presentation.simple_bottom_navigation.SimpleNavigationScreen
 import com.thurainx.cointrack.ui.theme.CoinTrackTheme
 import com.thurainx.cointrack.worker.NotiWorker
@@ -74,7 +76,9 @@ class MainActivity : ComponentActivity() {
 //                    }
 //                }
 
-                SimpleNavigationScreen()
+               // SimpleNavigationScreen()
+
+                Navigator(screen = CoinListScreen())
             }
         }
     }

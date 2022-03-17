@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CoinDetailViewModel @Inject constructor(
     private val getCoinDetailUseCase: GetCoinDetailUseCase,
-    savedStateHandle: SavedStateHandle
+   // savedStateHandle: SavedStateHandle
 ) : ViewModel(){
 
 
@@ -27,12 +27,12 @@ class CoinDetailViewModel @Inject constructor(
 
 
     init {
-        savedStateHandle.get<String>(Constant.PARAM_COIN_ID)?.let {
-            getCoinDetail(id = it)
-        }
+//        savedStateHandle.get<String>(Constant.PARAM_COIN_ID)?.let {
+//            getCoinDetail(id = it)
+//        }
     }
 
-    private fun getCoinDetail(id: String){
+     fun getCoinDetail(id: String){
         Log.d("vm", "coinDetail vm called")
 
         getCoinDetailUseCase(id).onEach {
