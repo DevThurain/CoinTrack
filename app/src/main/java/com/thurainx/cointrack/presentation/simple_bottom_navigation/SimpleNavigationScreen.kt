@@ -1,4 +1,4 @@
-package com.thurainx.cointrack.presentation.bottom_navigation
+package com.thurainx.cointrack.presentation.simple_bottom_navigation
 
 import androidx.compose.material.BottomAppBar
 import androidx.compose.material.BottomNavigationItem
@@ -15,7 +15,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.thurainx.cointrack.common.Routes
-import com.thurainx.cointrack.common.Routes.CoinListScreen
 import com.thurainx.cointrack.presentation.coin_list.CoinListScreen
 
 @Composable

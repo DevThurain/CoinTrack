@@ -1,4 +1,4 @@
-package com.thurainx.cointrack.presentation.bottom_navigation
+package com.thurainx.cointrack.presentation.simple_bottom_navigation
 
 import com.thurainx.cointrack.R
 import com.thurainx.cointrack.common.Routes
