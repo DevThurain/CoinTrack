@@ -63,6 +63,7 @@ dependencies {
 
     /* jetpack lifecycle */
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
+    implementation("androidx.compose.runtime:runtime-livedata:1.2.0-alpha05")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
 
@@ -79,10 +80,13 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.0.0")
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
-
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Work
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+
 
 
 }
