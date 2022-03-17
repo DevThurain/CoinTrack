@@ -20,6 +20,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.work.*
 import com.thurainx.cointrack.common.Constant
+import com.thurainx.cointrack.presentation.bottom_navigation.SimpleNavigationScreen
 import com.thurainx.cointrack.presentation.coin_detail.CoinDetailScreen
 import com.thurainx.cointrack.presentation.coin_list.CoinListScreen
 import com.thurainx.cointrack.ui.theme.CoinTrackTheme
@@ -41,8 +42,8 @@ class MainActivity : ComponentActivity() {
 //            ).build()
 
         val notiRequest = PeriodicWorkRequestBuilder<NotiWorker>(repeatInterval = 15,TimeUnit.MINUTES).build()
-
         val workManager =  WorkManager.getInstance(applicationContext)
+
 
 
         setContent {
@@ -83,6 +84,8 @@ class MainActivity : ComponentActivity() {
 //                        CoinDetailScreen()
 //                    }
 //                }
+
+                SimpleNavigationScreen()
             }
         }
     }
